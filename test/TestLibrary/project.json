@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    //"emitEntryPoint": true, <- Removed to generate a DLL instead of an EXE
+    "compilerName": "fsc",
+    "compile": {
+      "includeFiles": [
+        "Tests.fs"
+      ]
+    }
+  }, /*
+  "dependencies": {
+    "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160509"
+  }, */
+  "tools": {
+    "dotnet-compile-fsc": {
+      "version": "1.0.0-preview2-*" /*,
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win81",
+        "netstandard1.3"
+      ] */
+    }
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.0"
+        },
+        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
+        "xunit":"2.2.0-beta2-build3300",
+        "dotnet-test-xunit":"2.2.0-preview2-build1029",
+        "Library":{ // Our library project
+          "version": "1.0.0",
+        "target": "project"
+        }
+      } /*,
+      "imports": [
+        "portable-net45+win8",
+        "dnxcore50"
+      ] */
+    }
+  },
+  "testRunner":"xunit"
+}
